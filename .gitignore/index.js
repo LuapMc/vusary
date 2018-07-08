@@ -63,7 +63,7 @@ bot.on('message', message => {
    let thingToEcho = args.join(" ")
    var embed = new Discord.RichEmbed()
     .setDescription("Sondage")
-    .addField(thingToEcho, "Répondre avec :white_check_mark: ou :x:")
+    .addField(thingToEcho, "Répondre avec :white_check_mark: ou :X:")
     .setColor("0xB40404")
     .setTimestamp()
    message.guild.channels.find("name", "sondage").sendEmbed(embed)
