@@ -85,7 +85,7 @@ bot.on('message', message => {
 
 
 bot.on("ready", function () {
-bot.user.setActivity("Owner : LuapMc /")
+bot.user.setActivity("cmd: /help , Im VusaryBot")
 console.log('je suis pret')
 })
 
