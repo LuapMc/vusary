@@ -44,7 +44,7 @@ bot.on('message', msg => {
 
 
 case "serverlist":
-message.channel.send(bot.guilds.map(r => r.name + ` | **${r.memberCount}** membres`))
+message.channel.send(bot.guilds.map(r => r.name + ` | **${r.memberCount}** membres'))
 
 
 
