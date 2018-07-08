@@ -77,7 +77,7 @@ bot.on('message', message => {
 }}})
 
 
-bot.login(config.token);
+
 
 bot.on('message', message => {
  let command = message.content.split(" ") [0];
