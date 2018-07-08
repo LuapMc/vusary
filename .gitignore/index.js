@@ -4,7 +4,7 @@ var prefix = "/"
           
 bot.on("message" , function (message) {
      if (message.content === "/ping") {
-       message.reply("m’appelle pas je suis occuper!")
+       message.channel.sendMessage("Temps de latence avec le serveur ‘" + ‘ ${message.createdTimestamp - Date.now()}’ + " ms "’ ")
      }
 })
 
