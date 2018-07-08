@@ -1,18 +1,13 @@
-Discord = require("discord.js");
-client = new Discord.Client();
-var prefix = "*";
-var mention = "<@444228177351671819>"
+const Discord = require("discord.js")
+const bot = new Discord.Client()
+var prefix = "/"
+          
 
-client.on("ready", () => {
-var servers = client.guilds.array().map(g => g.game).join(',');
-console.log('Im ready');
-});
-var messages = [];
-client.on('message', msg =>{ 
-       if(msg.content.startWith(prefix + " Test")) {
-           message.channel.send('5/5'); 
-    }
+
+
+bot.on("ready", function () {
+    bot.user.setActivity("by !LuapMc#9493")
+    console.log('je suis pret')
 })
- 
 
-client.login(process.env.TOKEN)
+bot.login(process.env.TOKEN)
