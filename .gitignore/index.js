@@ -49,21 +49,43 @@ bot.on("message", message => {
 
 
 
-    //BAN
+if(msg.content.startsWith(prefix + 'ban')){
 
-    if(command === "/ban") {
-       let modRole = message.guild.roles.find("name", "staff"); {
-            return message.reply("Tu n'as pas les permession de faire cette commande.").catch(console.error);
-       }
-       const member = message.mentions.members.fisrt();
-       if(!member) return message.reply("Merci de mentionner l'utilisateur a bannir !")
-       member.ban().then(member => {
-           message.reply(${member.user.username} On se revoie dans quelque mois Inchalla).catch(console.error);
-           message.guild.channels.find("name" , "general").send(**${member.user.name} a été banni par **${message.author.usernamme}**)
-        }).catch(console.error)
-}})
+if(msg.channel.type === 'dm') return;
 
+if(!msg.guild.member(msg.author).hasPermission('ADMINISTRATOR')){
 
+return msg.reply("**❌ Vous n'avez pas la permissions d'utiliser cette commande**").catch(console.error);
+
+}
+
+if(msg.mentions.users.size === 0){
+
+return msg.reply("**❌ Veuillez mentionner l'utilisateur que vous voulez ban**")
+
+}
+
+if(!msg.guild.member(client.user).hasPermission('ADMINISTRATOR')){
+
+return msg.reply("**❌ Je n'ai pas la permission `ADMINISTRATOR` pour ban cet utilisateur**").catch(console.error);
+
+}
+
+let banMember = msg.guild.member(msg.mentions.users.first());
+
+if(!banMember){
+
+return msg.channel.send("**❌ Cet utilisateur n'est certainement pas valide**")
+
+}
+
+banMember.ban().then(member => {
+
+msg.channel.send(`**${member.user.username}** a bien été ban**`);
+
+})
+
+}
 
 bot.on("ready", function () {
 bot.user.setActivity("Owner : LuapMc /")
