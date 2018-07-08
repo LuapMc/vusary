@@ -19,7 +19,17 @@ console.log("Commande Salut effectué");
 }
 });
 
+bot.on("ready", () => {
 
+bot.on('message', message => {
+if(msg.content.startsWith(prefix + "ping")) {
+var now = require('performance-now');
+var startTime = now();
+message.channel.send("pong + wait...")
+.then(message => {
+var endTime = now();
+return message.edit("pong ping_pong = " + Math.round(endTime - startTime) + " ms.");
+}).catch(console.error);
 
 bot.on("ready", function () {
 bot.user.setActivity("by !LuapMc#9493")
