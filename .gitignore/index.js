@@ -19,11 +19,11 @@ console.log("Commande Salut effectué");
 }
 });
 
-if(message.content === "Hello"){
-message.reply("Good morning. :D");
-console.log("Commande Hello effectué");
-}
-});
+bot.on("message" , function (message) {
+     if (message.content === "Hello") {
+       message.reply("Good Morning . :D")
+     }
+})
 
 bot.on("ready", function () {
 bot.user.setActivity("by !LuapMc#9493")
