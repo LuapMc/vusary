@@ -10,7 +10,7 @@ bot.on("message" , function (message) {
 
 bot.on('message', message => {
 if (message.content === prefix + "help"){
-message.channel.sendMessage("Liste des commandes: **```\n -/help  \n -/ping  \n -Salut  \n -Hello  \n -/say  \n -/ban (InDev)```**");
+message.channel.sendMessage("Liste des commandes: **```\n -/help  \n -/ping  \n -Salut  \n -/infodiscord  \n -/sondage (LuapMc) \n -Hello  \n -/say  \n -/ban (InDev)```**");
 }
 
 if(message.content === "Salut"){
@@ -63,7 +63,7 @@ bot.on('message', message => {
    let thingToEcho = args.join(" ")
    var embed = new Discord.RichEmbed()
     .setDescription("Sondage")
-    .addField(thingToEcho, "Répondre avec :white_check_mark: ou :X:")
+    .addField(thingToEcho, "Répondre avec :white_check_mark: ou :x:")
     .setColor("0xB40404")
     .setTimestamp()
    message.guild.channels.find("name", "sondage").sendEmbed(embed)
