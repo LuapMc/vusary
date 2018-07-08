@@ -42,7 +42,26 @@ bot.on('message', msg => {
     }
 })
 
+bot.on("message", message => {
+    let command = message.content.split(" ")[0];
+    const args = message.content.slice(prefix.lenght).split(/ +/);
+    command = args.shift().toLowerCase();
 
+
+
+    //BAN
+
+    if(command === "/ban") {
+       let modRole = message.guild.roles.find("name", "staff"); {
+            return message.reply("Tu n'as pas les permession de faire cette commande.").catch(console.error);
+       }
+       const member = message.mentions.members.fisrt();
+       if(!member) return message.reply("Merci de mentionner l'utilisateur a bannir !")
+       member.ban().then(member => {
+           message.reply(${member.user.username} On se revoie dans quelque mois Inchalla).catch(console.error);
+           message.guild.channels.find("name" , "general").send(**${member.user.name} a été banni par **${message.author.usernamme}**)
+        }).catch(console.error)
+}})
 
 
 
