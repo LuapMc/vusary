@@ -77,25 +77,7 @@ bot.on('message', message => {
 }}})
 
 
-bot.login(config.token);
 
-bot.on('message', message => {
- let command = message.content.split(" ") [0];
- const args = message.content.slice(prefix.length).split(/ +/);
- command = args.shift().toLowerCase();
-
- if (command === "ban") {
-   let modRole = message.guild.roles.find("name", "Gérant Discord");
-  if(!message.member.roles.has(modRole.id)) {
-    return message.reply("Tu n'as pas la permission de faire cette commande.").catch(console.error);
-  }
-  const member = message.mentions.members.first();
-  if(!member) return message.reply("Merci de mentionner l'utilisateur à bannir.");
- member.ban().then(member => {
-    message.reply(`${member.user.username} à été banni eu serveur avec succès.`).catch(console.error)
-    message.guild.channel.find("name", "dev•vusary-luapmc").send(`**${member.user.username}** à été banni du serveur par **${message.author.username}**`)
-  }).catch(console.error)
- }})
 
  
 
