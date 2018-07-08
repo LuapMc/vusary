@@ -10,7 +10,7 @@ bot.on("message" , function (message) {
 
 bot.on('message', message => {
 if (message.content === prefix + "help"){
-message.channel.sendMessage("Liste des commandes: **```\n -/help  \n -/ping  \n -Salut  \n -Hello```**");
+message.channel.sendMessage("Liste des commandes: **```\n -/help  \n -/ping  \n -Salut  \n -Hello  \n -/say  \n -/ban (InDev)```**");
 }
 
 if(message.content === "Salut"){
@@ -47,7 +47,7 @@ bot.on('message', msg => {
 
 
 bot.on("ready", function () {
-bot.user.setActivity("by !LuapMc#9493")
+bot.user.setActivity("Owner : LuapMc /")
 console.log('je suis pret')
 })
 
