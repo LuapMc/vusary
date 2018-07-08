@@ -25,6 +25,27 @@ bot.on("message" , function (message) {
      }
 })
 
+bot.on('message', msg => {
+    if(msg.content.startsWith(prefix)) {
+        let trucrandom = msg.content.split(prefix)[1]
+        let commande = trucrandom.split(' ')[0]
+        switch (commande) {
+            case 'say':
+                let phrase = msg.content.split(" ").slice(1).join(" ")
+                msg.delete()
+                msg.channel.send(phrase)
+            break;
+        
+            default:
+            break;
+        }
+    }
+})
+
+
+
+
+
 bot.on("ready", function () {
 bot.user.setActivity("by !LuapMc#9493")
 console.log('je suis pret')
