@@ -20,7 +20,11 @@ console.log("Commande Salut effectué");
 });
 
 bot.on("guildMemberAdd", (member) => {
-    member.guild.channels.find("name", "bienvenue").send(bienvenue ${member} ``n'hésite pas à invité tes amis pour obtenir le grade @experimante``)
+    member.guild.channels.find("name", "bienvenue").send(bienvenue ${member} n'hésite pas à invité tes amis pour obtenir le grade @V.I.P)
+});
+bot.on("guildMemberAdd", member => {
+    var role = member.guild.roles.find('name', 'membre');
+    member.addRole(role)
 });
 
 bot.on("ready", function () {
