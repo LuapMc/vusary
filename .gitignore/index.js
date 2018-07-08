@@ -10,7 +10,7 @@ bot.on("message" , function (message) {
 
 bot.on('message', message => {
 if (message.content === prefix + "help"){
-message.channel.sendMessage("Liste des commandes: **```\n -/help  \n -/ping  \n  -Salut```**");
+message.channel.sendMessage("Liste des commandes: **```\n -/help  \n -/ping  \n -Salut  \n -Hello```**");
 }
 
 if(message.content === "Salut"){
@@ -19,7 +19,11 @@ console.log("Commande Salut effectué");
 }
 });
 
-
+if(message.content === "Hello"){
+message.reply("Good morning. :D");
+console.log("Commande Hello effectué");
+}
+});
 
 bot.on("ready", function () {
 bot.user.setActivity("by !LuapMc#9493")
