@@ -22,9 +22,10 @@ console.log("Commande Salut effectué");
 bot.on("guildMemberAdd", (member) => {
     member.guild.channels.find("name", "bienvenue").send(bienvenue ${member} ``n'hésite pas à invité tes amis pour obtenir le grade @experimante``)
 });
+
 bot.on("ready", function () {
-    bot.user.setActivity("by !LuapMc#9493")
-    console.log('je suis pret')
+bot.user.setActivity("by !LuapMc#9493")
+console.log('je suis pret')
 })
 
 bot.login(process.env.TOKEN)
