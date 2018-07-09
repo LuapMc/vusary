@@ -130,7 +130,23 @@ bot.on('message', message => {
  }})
 
 
+    if (command === "help") {
 
+  var embed = new Discord.RichEmbed()
+      .setDescription(`Help Menu`)
+      .addField("motary help")
+      .addField("motary ping")
+      .addField("motary serverio
+      .addField("motary owner")
+      .addField("motary sondage")
+      .addField("motary say")
+      .addField("motary ban")
+      .addField("motary kick")
+      .setColor("#FFFB35")
+
+  message.channel.sendEmbed(embed)
+}
+ 
 
 
 
