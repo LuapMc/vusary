@@ -130,25 +130,10 @@ bot.on('message', message => {
    }).catch(console.error)
 }})
 
+      .setColor
 
-    if (command === "help") {
 
-  var embed = new Discord.RichEmbed()
-      .setDescription(`Help Menu`)
-      .addField("/help")
-      .addField("/ping")
-      .addField("/si")
-      .addField("/owner")
-      .addField("/sondage")
-      .addField("/say")
-      .addField("/ban")
-      .addField("/kick")
-      .addField("Salut")
-      .addField("Hello")
-      .setColor("#FFFB35")
 
-  message.channel.sendEmbed(embed)
-}
  
 
 
