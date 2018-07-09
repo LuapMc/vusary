@@ -77,9 +77,17 @@ bot.on('message', message => {
 }}})
 
 
+bot.on("message" , function (message) {
+     if (message.content === "/owner") {
+       message.reply("Mon Créateur c'est !LuapMc#9493 :D")
+     }
+})
 
-
- 
+ bot.on("message" , function (message) {
+     if (message.content === "/stop") {
+       message.reply("Je M'eteins dans quelques secondes...⏱")
+     }
+})
 
   
 
@@ -89,7 +97,7 @@ bot.on('message', message => {
 
 
 bot.on("ready", function () {
-bot.user.setActivity("cmd: /help , Im VusaryBot")
+bot.user.setGame("cmd: /help , Im VusaryBot")
 console.log('je suis pret')
 })
 
