@@ -136,14 +136,14 @@ bot.on('message', message => {
       .setDescription(`Help Menu`)
       .addField("/help")
       .addField("/ping")
-      .addField("/si
+      .addField("/si")
       .addField("/owner")
       .addField("/sondage")
       .addField("/say")
       .addField("/ban")
       .addField("/kick")
       .addField("Salut")
-      .addFied("Hello")
+      .addField("Hello")
       .setColor("#FFFB35")
 
   message.channel.sendEmbed(embed)
