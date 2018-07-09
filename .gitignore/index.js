@@ -113,8 +113,8 @@ bot.on('message', message => {
    message.reply(`${member.user.username} à été expulser du serveur avec succès.`).catch(console.error);
    message.guild.channels.find("name", "dev•vusary-luapmc").send(`**${member.user.username} à été expulsé du serveur par **${message.author.username}**`)
  })catch(console.error)
-
- }
+}})
+ 
  
 
  if (command === "ban") {
@@ -129,12 +129,8 @@ bot.on('message', message => {
     message.guild.channel.find("name", "dev•vusary-luapmc").send(`**${member.user.username}** à été banni du serveur par **${message.author.username}**`)
    }).catch(console.error)
 }})
-
-      .setColor
-
-
-
- 
+}}
+}})
 
 
 
@@ -142,5 +138,6 @@ bot.on("ready", function () {
 bot.user.setActivity("cmd: /help , Im VusaryBot")
 console.log('je suis pret')
 })
+
 
 bot.login(process.env.TOKEN)
