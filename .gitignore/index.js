@@ -134,14 +134,16 @@ bot.on('message', message => {
 
   var embed = new Discord.RichEmbed()
       .setDescription(`Help Menu`)
-      .addField("motary help")
-      .addField("motary ping")
-      .addField("motary serverio
-      .addField("motary owner")
-      .addField("motary sondage")
-      .addField("motary say")
-      .addField("motary ban")
-      .addField("motary kick")
+      .addField("/help")
+      .addField("/ping")
+      .addField("/si
+      .addField("/owner")
+      .addField("/sondage")
+      .addField("/say")
+      .addField("/ban")
+      .addField("/kick")
+      .addField("Salut")
+      .addFied("Hello")
       .setColor("#FFFB35")
 
   message.channel.sendEmbed(embed)
