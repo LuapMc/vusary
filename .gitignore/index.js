@@ -112,22 +112,23 @@ bot.on('message', message => {
   kickMember.kick().then(member => {
    message.reply(`${member.user.username} à été expulser du serveur avec succès.`).catch(console.error);
    message.guild.channels.find("name", "dev•vusary-luapmc").send(`**${member.user.username} à été expulsé du serveur par **${message.author.username}**`)
-  catch(console.error)
+ })catch(console.error)
 
  }
+ 
 
-  if (command === "ban") {
+ if (command === "ban") {
    let modRole = message.guild.roles.find("name", "Gérant Discord");
-  if(!message.member.roles.has(modRole.id)) {
+   if(!message.member.roles.has(modRole.id)) {
     return message.reply("Tu n'as pas la permission de faire cette commande.").catch(console.error);
-  }
-  const member = message.mentions.members.first();
-  if(!member) return message.reply("Merci de mentionner l'utilisateur à bannir.");
- member.ban().then(member => {
+   }
+   const member = message.mentions.members.first();
+   if(!member) return message.reply("Merci de mentionner l'utilisateur à bannir.");
+   member.ban().then(member => 
     message.reply(`${member.user.username} à été banni du serveur avec succès.`).catch(console.error)
     message.guild.channel.find("name", "dev•vusary-luapmc").send(`**${member.user.username}** à été banni du serveur par **${message.author.username}**`)
-  }).catch(console.error)
- }})
+   }).catch(console.error)
+}})
 
 
     if (command === "help") {
