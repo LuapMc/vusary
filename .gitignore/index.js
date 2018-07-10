@@ -129,8 +129,8 @@ bot.on('message', message => {
     message.guild.channel.find("name", "dev•vusary-luapmc").send(`**${member.user.username}** à été banni du serveur par **${message.author.username}**`)
    }).catch(console.error)
 }})
-}}
-}})
+
+
 
 
 
