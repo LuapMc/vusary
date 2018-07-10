@@ -8,10 +8,7 @@ bot.on("message" , function (message) {
      }
 })
 
-bot.on('message', message => {
-if (message.content === prefix + "help"){
-message.channel.sendMessage("Liste des commandes: **```\n -/help  \n -/ping  \n -Salut  \n -/infodiscord  \n -/sondage (LuapMc) \n -Hello  \n -/say  \n -/ban (InDev)```**");
-}
+
 
 if(message.content === "Salut"){
 message.reply("Bien le bonjour. :D");
