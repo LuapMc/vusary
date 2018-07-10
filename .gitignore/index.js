@@ -90,8 +90,24 @@ bot.on("message" , function (message) {
 })
 
 
- 
- 
+    bot.on(message.content === "help") {
+
+  var embed = new Discord.RichEmbed()
+      .setDescription(`Help Menu`)
+      .addField("/help")
+      .addField("/ping")
+      .addField("Salut ")
+      .addField("/si (ServerInfo")
+      .addField("/sondage(Owner)")
+      .addField("/say")
+      .addField("/ban(InDev)")
+      .addField("/kick(InDev)")
+      .addField("Hello")
+      .setColor("#FFFB35")
+
+  message.channel.sendEmbed(embed)
+}
+
 
  
 
