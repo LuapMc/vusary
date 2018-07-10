@@ -8,7 +8,13 @@ bot.on("message" , function (message) {
      }
 })
 
+bot.on('message', message => {
 
+if (message.content === prefix + "help"){
+
+message.channel.sendMessage("Liste des Commandes Du Bot • Vusary • : **```\n -/help ( Envoie Tout Les Commande Dans Le Salon )  \n -/ping ( Test De Ms-Ping ) \n -Salut ( Bien Le Bonjour . :D  \n -/si ( ServerInfo )  \n -/sondage (LuapMc - Crée Un Sondage Avec Des React Auto) \n -Hello ( Good Morning  \n -/say ( Le Bot Répète )  \n -/ban (InDev - Ban Un Membre)```**");
+
+}
 
 if(message.content === "Salut"){
 message.reply("Bien le bonjour. :D");
@@ -87,23 +93,7 @@ bot.on("message" , function (message) {
 })
 
 
-    bot.on(message.content === "help") {
 
-  var embed = new Discord.RichEmbed()
-      .setDescription(`Help Menu`)
-      .addField("/help")
-      .addField("/ping")
-      .addField("Salut ")
-      .addField("/si (ServerInfo")
-      .addField("/sondage(Owner)")
-      .addField("/say")
-      .addField("/ban(InDev)")
-      .addField("/kick(InDev)")
-      .addField("Hello")
-      .setColor("#FFFB35")
-
-  message.channel.sendEmbed(embed)
-}
 
 
  
