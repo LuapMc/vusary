@@ -93,7 +93,7 @@ bot.on("message" , function (message) {
  
  
 
- if (command 
+ 
 
 
 
