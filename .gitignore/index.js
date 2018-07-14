@@ -88,13 +88,8 @@ bot.on("message" , function (message) {
      }
 })
 
-  case "clear":
-  if (message.member.hasPermission("MANAGE_MESSAGES")){
-   message.channel.fetchMessages()
-    .then(function(list){
-     message.channel.bulkDelete(list);
-    }, function(err){message.channel.send("Erreur")})}
-  break;
+  
+
 
 
 
@@ -103,7 +98,7 @@ bot.on("message" , function (message) {
 
 
 bot.on("ready", function () {
-bot.user.setActivity("FAITES DES DONS!https://paypal.me/vusaryshop")
+bot.user.setActivity("Se Faire Coder Par Zardox")
 console.log('je suis pret')
 })
 
