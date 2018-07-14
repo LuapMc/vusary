@@ -93,69 +93,41 @@ bot.on("message" , function (message) {
 })
 
 
-bot.on("message", async message => {
-  if(message.author.bot) return;
-  if(message.channel.type === "dm") return;
 
-  let prefix = botconfig.prefix;
-  let messageArray = message.content.split(" ");
-  let cmd = messageArray[0];
-  let args = messageArray.slice(1);
+const Discord = require('discord.js');
+exports.run = (client, message, args) => {
+  let reason = args.slice(1).join(' ');
+  let user = message.mentions.users.first();
+  let modlog = client.channels.find('name', 'mod-log');
+  if (!modlog) return message.reply('I cannot find a mod-log channel');
+  if (reason.length < 1) return message.reply('You must supply a reason for the ban.');
+  if (message.mentions.users.size < 1) return message.reply('You must mention someone to ban them.').catch(console.error);
 
-  if(cmd === `${prefix}kick`){
+  if (!message.guild.member(user).bannable) return message.reply('I cannot ban that member');
+  message.guild.ban(user, 2);
 
-    //!kick @daeshan askin for it
+  const embed = new Discord.RichEmbed()
+    .setColor(0x00AE86)
+    .setTimestamp()
+    .addField('Action:', 'Ban')
+    .addField('User:', `${user.username}#${user.discriminator} (${user.id})`)
+    .addField('Modrator:', `${message.author.username}#${message.author.discriminator}`)
+    .addField('Reason', reason);
+  return client.channels.get(modlog.id).sendEmbed(embed);
+};
 
-    let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!kUser) return message.channel.send("impossible de trouver cette utilisateur!");
-    let kReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Je ne peux pas!");
-    if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("L'utilisateur à bien été kick!");
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 0
+};
 
-    let kickEmbed = new Discord.RichEmbed()
-    .setDescription("~Kick~")
-    .setColor("#e56b00")
-    .addField("Kicked User", `${kUser} with ID ${kUser.id}`)
-    .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
-    .addField("Kicked In", message.channel)
-    .addField("Tiime", message.createdAt)
-    .addField("Reason", kReason);
-
-    let kickChannel = message.guild.channels.find(`name`, "logs");
-    if(!kickChannel) return message.channel.send("impossible de trouver ce channel.");
-
-    message.guild.member(kUser).kick(kReason);
-    kickChannel.send(kickEmbed);
-
-    return;
-  }
-
-  if(cmd === `${prefix}ban`){
-
-    let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!bUser) return message.channel.send("impossible de trouver cette utilisateur!");
-    let bReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("Je ne peux pas!");
-    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Je ne peux pas le faire!");
-
-    let banEmbed = new Discord.RichEmbed()
-    .setDescription("~Ban~")
-    .setColor("#bc0000")
-    .addField("Banned User", `${bUser} with ID ${bUser.id}`)
-    .addField("Banned By", `<@${message.author.id}> with ID ${message.author.id}`)
-    .addField("Banned In", message.channel)
-    .addField("Time", message.createdAt)
-    .addField("Reason", bReason);
-
-    let incidentchannel = message.guild.channels.find(`name`, "logs");
-    if(!incidentchannel) return message.channel.send("impossible de trouve ce channel.");
-
-    message.guild.member(bUser).ban(bReason);
-    incidentchannel.send(banEmbed);
-
-
-    return;
-  }
+exports.help = {
+  name: 'ban',
+  description: 'Bans the mentioned user.',
+  usage: 'ban [mention] [reason]'
+};
 
 
  
