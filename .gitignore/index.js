@@ -103,7 +103,7 @@ bot.on("message" , function (message) {
 
 
 bot.on("ready", function () {
-bot.user.setActivity("/help || Zardox Mon Maître ||")
+bot.user.setActivity("FAITES DES DONS!https://paypal.me/vusaryshop")
 console.log('je suis pret')
 })
 
