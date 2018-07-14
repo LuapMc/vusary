@@ -2,11 +2,7 @@ const Discord = require("discord.js")
 const bot = new Discord.Client()
 var prefix = "/"
           
-bot.on("message" , function (message) {
-     if (message.content === "/ping") {
-       message.reply("m’appelle pas je suis occuper!")
-     }
-})
+
 
 bot.on('message', message => {
 
@@ -99,6 +95,7 @@ bot.on("message" , function (message) {
   case "ping":
   message.channel.sendMessage('Temp de latence avec le serveur: `'+`${message.createdTimestamp - Date.now')}` + ' ms`')
   break;
+
   case "clear":
   if (message.member.hasPermission("MANAGE_MESSAGES")){
    message.channel.fetchMessages()
