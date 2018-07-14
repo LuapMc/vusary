@@ -44,7 +44,7 @@ bot.on('message', msg => {
 
 bot.on('message', message => {
 
- if(message.content === prefix + "infodiscord") {
+ if(message.content === prefix + "si") {
   var embed = new Discord.RichEmbed()
   .setDescription("Information du Discord")
   .addField("Nom Du Discord", message.guild.name)
@@ -84,20 +84,22 @@ bot.on("message" , function (message) {
 
  bot.on("message" , function (message) {
      if (message.content === "/stop") {
-       message.reply("Je M'eteins dans quelques secondes...⏱")
+       message.reply("Vous N'avez pas la permission")
      }
 })
 
-
-
-
-
-  case "ping":
-  message.channel.sendMessage('Temp de latence avec le serveur: `'+`${message.createdTimestamp - Date.now')}` + ' ms`')
+  case "clear":
+  if (message.member.hasPermission("MANAGE_MESSAGES")){
+   message.channel.fetchMessages()
+    .then(function(list){
+     message.channel.bulkDelete(list);
+    }, function(err){message.channel.send("Erreur")})}
   break;
 
-  
 
+
+
+  
 
 
 bot.on("ready", function () {
