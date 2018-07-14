@@ -96,7 +96,16 @@ bot.on("message" , function (message) {
 
 
 
-
+  case "ping":
+  message.channel.sendMessage('Temp de latence avec le serveur: `'+`${message.createdTimestamp - Date.now')}` + ' ms`')
+  break;
+  case "clear":
+  if (message.member.hasPermission("MANAGE_MESSAGES")){
+   message.channel.fetchMessages()
+    .then(function(list){
+     message.channel.bulkDelete(list);
+    }, function(err){message.channel.send("Erreur")})}
+  break;
  
 
 
