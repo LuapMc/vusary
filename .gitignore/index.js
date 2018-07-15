@@ -98,7 +98,7 @@ bot.on("message" , function (message) {
 
 
 bot.on("ready", function () {
-bot.user.setActivity("Se Faire Coder Par Zardox")
+bot.user.setActivity("être inutile | Eteind Des Demain")
 console.log('je suis pret')
 })
 
