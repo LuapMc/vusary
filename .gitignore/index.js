@@ -88,7 +88,7 @@ bot.on("message" , function (message) {
      }
 })
 
-  
+bd
 
 
 
