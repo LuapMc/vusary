@@ -88,7 +88,7 @@ bot.on("message" , function (message) {
      }
 })
 
-bot.login(config.token);
+bot.login (config.token);
 
 if(message.content.startsWith(prefix + "kick")) {
         if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.channel.send("Vous n'avez pas la permission");
