@@ -118,23 +118,3 @@ if(message.content.startsWith(prefix + "kick")) {
 	
 
 	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-bot.on("ready", function () {
-bot.user.setActivity("être inutile | Eteind Des Demain")
-console.log('je suis pret')
-})
-
-
-bot.login(process.env.TOKEN)
-
-		
