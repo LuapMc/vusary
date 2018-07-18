@@ -89,7 +89,7 @@ bot.on("message" , function (message) {
 })
 
 
-client.on('message', message => {
+		
 
 
 	 if (command === 'kick') {
