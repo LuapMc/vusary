@@ -88,56 +88,56 @@ bot.on("message" , function (message) {
      }
 })
 
-bot.login(config.token);
 
-bot.on('message', message => {
- let command = message.content.split(" ") [0];
- const args = message.content.slice(prefix.length).split(/ +/);
- command = args.shift().toLowerCase();
+if(message.content.startsWith(prefix + "kick")) {
+        if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.channel.send("Vous n'avez pas la permission");
 
- if (command === "kick") {
-  let modRole = message.guild.roles.find("name", "Gérant Discord");
-  if(!message.member.roles.has(modRole.id)) }
-   return message.reply("Tu n'as pas la permission de faire cette commande.").catch(console.error);
-  }
-  if(message.mention.user.size === 0) {
-   return message.reply("Merci de mentionner l'utilisateur a expulsé.").catch(console.error);
-  }
-  let kickMember = message.guild.member(message.mentions.users.first());
-  if(!kickMember) {
-   return message.reply("Cet utilisateur est Introuvable ou impossible à expulser.")
-  }
-  if(!message.guild.member(bot.user).hasPermission("KICK_MEMBERS"}) {
-   return message.reply("Je n'ai pas la permission KICK_MEMBERS pour faire ceci.").catch(console.error)
-  }
-  kickMember.kick().then(member => {
-   message.reply(`${member.user.username} à été expulser du serveur avec succès.`).catch(console.error);
-   message.guild.channels.find("name", "dev•vusary-luapmc").send(`**${member.user.username} à été expulsé du serveur par **${message.author.username}**`)
-  catch(console.error)
+        if(message.mentions.users.size === 0) {
+            return message.channel.send("Vous devez mentionner un utilisateur")
+        }
 
- }
+        var kick = message.guild.member(message.mentions.users.first());
+        if(!kick) {
+            return message.channel.send("Je ne sais pas si l'utilisateur existe")
+        }
 
-  if (command === "ban") {
-   let modRole = message.guild.roles.find("name", "Gérant Discord");
-  if(!message.member.roles.has(modRole.id)) {
-    return message.reply("Tu n'as pas la permission de faire cette commande.").catch(console.error);
-  }
-  const member = message.mentions.members.first();
-  if(!member) return message.reply("Merci de mentionner l'utilisateur à bannir.");
- member.ban().then(member => {
-    message.reply(`${member.user.username} à été banni eu serveur avec succès.`).catch(console.error)
-    message.guild.channel.find("name", "dev•vusary-luapmc").send(`**${member.user.username}** à été banni du serveur par **${message.author.username}**`)
-  }).catch(console.error)
- }})
+        if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) {
+            return message.channel.send("Je n'ai pas la permission pour kick");
+        }
 
-});
+        kick.kick().then(member => {
+            message.channel.send(`${member.user.username} est kick par  ${message.author.username}`)
+        });
+    }
 	
-
 
 	
 
-  
+	
 
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
 
 bot.on("ready", function () {
 bot.user.setActivity("être inutile | Eteind Des Demain")
