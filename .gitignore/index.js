@@ -14,7 +14,7 @@ message.channel.sendMessage("Liste des Commandes Du Bot • Vusary • : **```\n
 
 if(message.content === "Salut"){
 message.reply("Bien le bonjour. :D");
-console.log("Commande Salut effectué");
+console.log("Commande Salut effectué")
 }
 });
 
@@ -118,7 +118,7 @@ if(message.content.startsWith(prefix + "kick")) {
 	
 
 	
-bot.on("ready", function l() {
+bot.on("ready", function => () {
 bot.user.setActivity("être inutile | Eteind Des Demain")
 console.log('je suis pret')
 })
