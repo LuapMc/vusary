@@ -22,7 +22,7 @@ bot.on("message" , function (message) {
      if (message.content === "Hello") {
        message.reply("Good Morning . :D")
      }
-})
+});
 
 bot.on('message', msg => {
     if(msg.content.startsWith(prefix)) {
@@ -121,7 +121,7 @@ if(message.content.startsWith(prefix + "kick")) {
 bot.on("ready", function () {
 bot.user.setActivity("être inutile | Eteind Des Demain")
 console.log('je suis pret')
-})
+});
 
 
 bot.login(process.env.TOKEN)
