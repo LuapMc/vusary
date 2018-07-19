@@ -22,7 +22,7 @@ bot.on("message" , function (message) {
      if (message.content === "Hello") {
        message.reply("Good Morning . :D")
      }
-})
+});
 
 bot.on('message', msg => {
     if(msg.content.startsWith(prefix)) {
