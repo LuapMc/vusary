@@ -31,7 +31,7 @@ bot.on('message', msg => {
         switch (commande) {
             case 'say':
                 let phrase = msg.content.split(" ").slice(1).join(" ")
-                msg.delete()
+v                msg.delete()
                 msg.channel.send(phrase)
             break;
         
@@ -111,7 +111,7 @@ if(message.content.startsWith(prefix + "kick")) {
 
         if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) {
 
-            return message.channel.send("Je n'ai pas la permission pour kick")
+            return message.channel.send("Je n'ai pas la permission pour kick");
 
         }
 
