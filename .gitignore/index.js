@@ -88,38 +88,21 @@ bot.on("message" , function (message) {
      }
 })
 
+module.exports = (client, message, args) => {
+  message.channel.send('Pong...').then((msg) => {
+    msg.edit(`Pong! Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+  });
+};
+
 	
-bot.on ("message", (message) => {
 
-if(message.content.startsWith(prefix + "kick")) {
-
-        if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.channel.send("Vous n'avez pas la permission");
-
-        if(message.mentions.users.size === 0) {
-
-            return message.channel.send("Vous devez mentionner un utilisateur")
-
-        }
-
-        var kick = message.guild.member(message.mentions.users.first());
-
-        if(!kick) {
-
-            return message.channel.send("Je ne sais pas si l'utilisateur existe")
-
-        }
-
-        if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) {
-
-            return message.channel.send("Je n'ai pas la permission pour kick");
-
-        }
-
-        kick.kick().then(member => {
-
-            message.channel.send(`${member.user.username} est kick par $message.author.username)
-}`)
 	
+
+	
+
+
+
+
 
 	
 
