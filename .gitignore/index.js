@@ -14,9 +14,9 @@ message.channel.sendMessage("Liste des Commandes Du Bot • Vusary • : **```\n
 
 if(message.content === "Salut"){
 message.reply("Bien le bonjour. :D");
-console.log("Commande Salut effectué")
+console.log("Commande Salut effectué");
 }
-});
+})
 
 bot.on("message" , function (message) {
      if (message.content === "Hello") {
