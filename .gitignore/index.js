@@ -39,7 +39,7 @@ bot.on('message', msg => {
             break;
         }
     }
-});
+})
 
 
 bot.on('message', message => {
@@ -70,7 +70,7 @@ bot.on('message', message => {
     message.react("✅")
     message.react("❌")
    }).catch(function() {
-   })
+   });
    }else{
     return message.reply("Tu n'as pas la permission.")
 }}})
