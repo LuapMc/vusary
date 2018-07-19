@@ -31,7 +31,7 @@ bot.on('message', msg => {
         switch (commande) {
             case 'say':
                 let phrase = msg.content.split(" ").slice(1).join(" ")
-v                msg.delete()
+                msg.delete()
                 msg.channel.send(phrase)
             break;
         
@@ -125,7 +125,7 @@ if(message.content.startsWith(prefix + "kick")) {
 
 	
 bot.on("ready", function () {
-bot.user.setActivity("être inutile | Eteind Des Demain")
+bot.user.setActivity("/kick || by ! LuapMc#9493")
 console.log('je suis pret')
 })
 
