@@ -103,7 +103,7 @@ if(message.content.startsWith(prefix + "kick")) {
         }
 
         if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) {
-            return message.channel.send("Je n'ai pas la permission pour kick");
+            return message.channel.send("Je n'ai pas la permission pour kick")
         }
 
         kick.kick().then(member => {
@@ -121,7 +121,7 @@ if(message.content.startsWith(prefix + "kick")) {
 bot.on("ready", function () {
 bot.user.setActivity("être inutile | Eteind Des Demain")
 console.log('je suis pret')
-});
+})
 
 
 bot.login(process.env.TOKEN)
