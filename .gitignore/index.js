@@ -103,7 +103,7 @@ if(message.content.startsWith(prefix + "kick")) {
         }
 
         if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) {
-            return message.channel.send("Je n'ai pas la permission pour kick")
+            return message.channel.send("Je n'ai pas la permission pour kick");
         }
 
         kick.kick().then(member => {
