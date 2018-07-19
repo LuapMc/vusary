@@ -118,7 +118,7 @@ if(message.content.startsWith(prefix + "kick")) {
         kick.kick().then(member => {
 
             message.channel.send(`${member.user.username} est kick par $message.author.username)
-}`)}}
+}`)}
 	
 
 	
